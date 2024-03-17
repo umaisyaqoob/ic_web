@@ -2,13 +2,18 @@
 Prefix
 --------------------------------------------- */
 
+@font-face{
+    font-family: "GRIFTER";
+    src : url(../assets/fonts/GRIFTER\ Bold\ 700.otf), format('onetype');
+}
+
 :root{
     --font-primary: 'Source Sans 3 ', sans-serif;
-    --font-secondary: 'Poppins', sans-serif;
+    --font-secondary: 'GRIFTER', sans-serif;
     --shadow: 0px 1px 5px 1px #737373;
-    --color-primary : #4d4dff;
+    --color-primary : #2872FF;
     --color-light : #ffffff;
-    --color-secondary : #1a1a1a;
+    --color-secondary : #333333;
     --color-secondary-light : #737373;
 }
 
@@ -58,18 +63,24 @@ a{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 /* ---------------------------------------------
 Header
 --------------------------------------------- */
 
 .header{
     box-shadow: var(--shadow) !important;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    top: 0px;
+    background-color: var(--color-light) !important;
 }
 .header-entity{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.3rem 0px;
+    padding: 2.5rem 0px;
     overflow: visible;
 }
 .page-menu{
@@ -100,10 +111,15 @@ Header
     font-size: 3.5rem;
     display: flex;
     transition: .3s;
-    padding: 1rem 2rem;    
+    padding: 1rem 2rem;   
+    color: var(--color-primary); 
 }
-.menu-icon i:hover, .xmark i:hover{
+.menu-icon i:hover{
     color: var(--color-primary);
+    cursor: pointer;
+}
+.xmark i:hover{
+    color: var(--color-light);
     cursor: pointer;
 }
 .page-menu ul.active{
@@ -120,12 +136,15 @@ Header
     color: var(--color-primary) !important;
 }
 .signin-hide{
-    display: none;
+    display: none !important;
 }
 
 @media (max-width: 868px){
     .menu-icon,.responsive-menu-title{
         display: block;
+    }
+    .signin-hide{
+        display: block !important;
     }
     .page-menu ul li{
         display: block;
@@ -149,7 +168,7 @@ Header
         width: 45%;
         right: -45%;
         padding: 2rem 1.5rem;
-        z-index: 2;
+        z-index: 3;
     }
     .responsive-menu-title{
         display: flex;
@@ -164,17 +183,33 @@ Home
 --------------------------------------------- */
 
 .home{
-    /* background: url('../images/about-bg.png'); */
+    background: url('../images/home_bg.png');
     width: 100%;
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    z-index: 2;
+    margin-top: 10rem;
+}
+.ellipse-image-home::before{
+    content: '';
+    background-image: url('../images/ellipse_image-home.png');
+    width: 100px;
+    height: 295px;
+    /* background: linear-gradient(#2872FF,#FFFFFF); */
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 240px;
+    right: 10px;
+    transform: rotate(360deg);
+    z-index: -1;
 }
 
 .home-entity{
     display: flex;
     justify-content: space-between;
-    margin: 5rem 0px;
+    margin: 7rem 0px;
 
 }
 .details{
@@ -186,6 +221,7 @@ Home
     font-weight: bold;
     padding: .7rem 0rem;
     color: var(--color-secondary);
+    font-family: var(--font-secondary) !important;
 }
 .chatbot{
     width: 40%;
@@ -361,6 +397,22 @@ Home 2
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
+    /* background-color: red; */
+    position: relative;
+    z-index: 1;
+}
+
+.ellipse-image-home2::before{
+    content: '';
+    background-image: url('../images/ellipse_image-home2.png');
+    width: 300px;
+    height: 320px;
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 0px;
+    left: 10px;
+    transform: rotate(360deg);
+    z-index: -1;
 }
 
 .home2-table{
@@ -374,11 +426,14 @@ Home 2
 .home2-table table th{
     font-size: 2rem;
     padding: 1.5rem;
+    font-family: var(--font-secondary);
 }
 .home2-table table tbody td{
     padding: 2rem;
     text-align: center;
     font-size: 2rem;
+    background-color: var(--color-light);
+    border-radius: 2rem;
 }
 .home2-table table tbody{
     margin-top: 3rem;
@@ -541,11 +596,10 @@ Variations Bar
 }
 
 
-
-
 /* ---------------------------------------------
 portfolio-growth-and-annual-returns-entity
 --------------------------------------------- */
+
 .portfolio-growth-and-annual-returns{
     background: url('../images/hero-bg.png');
     width: 100%;
@@ -572,6 +626,7 @@ portfolio-growth-and-annual-returns-entity
     font-size: 2.5rem;
     padding: 1rem 0rem;
     color: var(--color-secondary);
+    font-family: var(--font-secondary);
 }
 
 .portfolio-growth-and-annual-returns-entity-child .image-entity img{
@@ -594,8 +649,9 @@ portfolio-growth-and-annual-returns-entity
 
 
 /* ---------------------------------------------
-portfolio-growth-and-annual-returns-entity
+footer-copyright
 --------------------------------------------- */
+
 .footer-copyright-section{
     box-shadow: 1px 0px 3px 1px #737373;
 }
