@@ -33,6 +33,7 @@ html{
 .custom-container{
     width: 90%;
     margin: auto;
+    padding: .2rem;
 }
 
 .display-flex{
@@ -55,6 +56,7 @@ a{
     border-radius: 1rem;
     color: var(--color-light);
     font-size: 1.8rem;
+    cursor: pointer;
 }
 
 .custom-img-handler{
@@ -122,9 +124,11 @@ Header
     color: var(--color-light);
     cursor: pointer;
 }
+.page-menu ul{
+    transition: .4s all ease-out;
+}
 .page-menu ul.active{
     right: -8px;
-    transition: .4s all ease-out;
 }
 .resposive-behaviour-signin-btn{
     text-align: center;
@@ -201,7 +205,7 @@ Home
     position: absolute;
     background-repeat: no-repeat;
     top: 240px;
-    right: 10px;
+    right: -5px;
     transform: rotate(360deg);
     z-index: -1;
 }
@@ -233,6 +237,7 @@ Home
     margin: .3rem;
     position: relative;
     z-index: -1;
+    transition: .7s all ease-in-out;
 }
 .chatbot-entity{
     background-color: var(--color-primary);
@@ -285,7 +290,6 @@ Home
     position: fixed;
     bottom: 10rem;
     right: 2.9rem;
-    transition: .4s all;
 }
 
 
@@ -293,9 +297,21 @@ Home
     .details .details-content{
         font-size: 3.2rem;
     }
+    .details{
+        width: 55%;
+        padding: 3rem 0rem;
+    }
+    .chatbot-entity{
+        padding-right: 0px;
+    }
 }
 
 @media (max-width: 1024px){
+    .details{
+        width: 50%;
+        padding: 3rem 0rem;
+    }
+
     .details .details-content{
         font-size: 2.8rem;
     }
@@ -303,13 +319,13 @@ Home
     .chatbot-entity h1{
         font-size: 2.5rem;
     }
-}
-
-@media (max-width: 920px){
     .details .details-content{
         font-size: 2.5rem;
     }
+}
 
+@media (max-width: 920px){
+  
     .chatbot-entity h1{
         font-size: 2.2rem;
     }
@@ -326,7 +342,7 @@ Home
         width: 50%;
         position: fixed;
         bottom :10rem;
-        right :-50rem;
+        right :-100rem;
         z-index: 1;
     }
     .chat-btn i{
@@ -334,7 +350,7 @@ Home
     }
     .chatbot-venu{
         width: 100%;
-        height: 300px;
+        height: 245px;
         position: relative;
         z-index: -1;
     }
@@ -372,6 +388,10 @@ Home
 }
 
 @media (max-width: 420px){
+    .home{
+        overflow-y: hidden;
+    }
+
     .details .details-content{
         font-size: 2rem;
     }
@@ -410,7 +430,20 @@ Home 2
     position: absolute;
     background-repeat: no-repeat;
     top: 0px;
-    left: 10px;
+    left: -10px;
+    transform: rotate(360deg);
+    z-index: -1;
+}
+
+.ellipse-image-bottom-home2::before{
+    content: '';
+    background-image: url('../images/bottom_home2.png');
+    width: 300px;
+    height: 320px;
+    position: absolute;
+    background-repeat: no-repeat;
+    bottom: 0px;
+    right: -100px;
     transform: rotate(360deg);
     z-index: -1;
 }
@@ -433,13 +466,16 @@ Home 2
     text-align: center;
     font-size: 2rem;
     background-color: var(--color-light);
-    border-radius: 2rem;
 }
 .home2-table table tbody{
     margin-top: 3rem;
     padding: 1.3rem;
-    border-radius: 2rem;
+}
+.div-details-table{
     box-shadow: var(--shadow);
+    border-radius: 2rem;
+    padding: 0rem 2rem;
+    background-color: var(--color-light);
 }
 table, td{
     border-collapse: collapse;
@@ -599,13 +635,51 @@ Variations Bar
 /* ---------------------------------------------
 portfolio-growth-and-annual-returns-entity
 --------------------------------------------- */
+.ellipse-image-portfolio-growth-and-annual-returns::before{
+    content: '';
+    background-image: url('../images/ellipse_image-home2.png');
+    width: 300px;
+    height: 320px;
+    position: absolute;
+    background-repeat: no-repeat;
+    top: -40px;
+    left: -10px;
+    transform: rotate(360deg);
+    z-index: -1;
+}
+
+.ellipse-image-bottom-portfolio-growth-and-annual-returns::before{
+    content: '';
+    background-image: url('../images/bottom_home2.png');
+    width: 300px;
+    height: 320px;
+    position: absolute;
+    background-repeat: no-repeat;
+    bottom: 20px;
+    right: -100px;
+    transform: rotate(360deg);
+    z-index: -1;
+}
+.ellipse-image-bottom-portfolio-growth-and-annual-returns-vector::before{
+    content: '';
+    background-image: url('../images/vector.png');
+    width: 800px;
+    height: 260px;
+    position: absolute;
+    background-repeat: no-repeat;
+    bottom: 0px;
+    left: 40px;
+    transform: rotate(360deg);
+    z-index: -1;
+}
 
 .portfolio-growth-and-annual-returns{
-    background: url('../images/hero-bg.png');
+    /* background: url('../images/hero-bg.png'); */
     width: 100%;
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
 
 .portfolio-growth-and-annual-returns-entity{
@@ -635,6 +709,20 @@ portfolio-growth-and-annual-returns-entity
     height: 320px;
 }
 
+@media(max-width:1200px){
+    .ellipse-image-bottom-portfolio-growth-and-annual-returns-vector::before{
+        width: 400px;
+        left: 20px;
+    }
+    }
+
+@media(max-width:1050px){
+.ellipse-image-bottom-portfolio-growth-and-annual-returns-vector::before{
+    bottom: 0px;
+    left: 20px;
+}
+}
+
 @media(max-width: 1000px){
     .portfolio-growth-and-annual-returns-entity{
         flex-direction: column;
@@ -647,6 +735,30 @@ portfolio-growth-and-annual-returns-entity
     }
 }
 
+@media(max-width:868px){
+    .portfolio-growth-and-annual-returns-entity{
+        padding: 5rem 0.3rem;
+    }
+}
+
+@media(max-width:795px){
+    .ellipse-image-bottom-portfolio-growth-and-annual-returns-vector::before{
+        bottom: 0px;
+        left: 10px;
+        width: 400px;
+        
+    }
+    }
+
+@media(max-width:500px){
+        .ellipse-image-bottom-portfolio-growth-and-annual-returns-vector::before{
+            bottom: 0px;
+            left: 4px;
+            width: 300px;
+            
+        }
+}
+    
 
 /* ---------------------------------------------
 footer-copyright
@@ -662,3 +774,336 @@ footer-copyright
     color: var(--color-secondary);
 
 }
+
+
+
+
+
+
+
+/* ==========================================================================================
+ACCOUNT PAGE
+========================================================================================== */
+
+
+/* ---------------------------------------------
+account + Ref: (home2-table) 418 - 538
+--------------------------------------------- */
+
+
+.ellipse-image-account::before{
+    content: '';
+    background-image: url('../images/ellipse_image-home2.png');
+    width: 300px;
+    height: 320px;
+    position: absolute;
+    background-repeat: no-repeat;
+    bottom: 0px;
+    left: -10px;
+    transform: rotate(360deg);
+    z-index: -1;
+}
+
+.ellipse-image-account2::before{
+    content: '';
+    background-image: url('../images/ellipse_image-home.png');
+    width: 100px;
+    height: 295px;
+    /* background: linear-gradient(#2872FF,#FFFFFF); */
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 0px;
+    right: -10px;
+    transform: rotate(360deg);
+    z-index: -1;
+}
+
+
+/* ---------------------------------------------
+Variations bar account
+--------------------------------------------- */
+
+
+
+.variations-bar-account-entity{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-secondary);
+    padding: 3rem 2rem;
+    border-radius: 2rem;
+}
+.variations-bar-account-entity .variations-bar-account-entity-runing{
+    padding: 0rem 5rem;
+    color: var(--color-light);
+    font-size: 3rem;
+    font-weight: normal !important;
+}
+
+
+.account-portfolio-growth{  /* Remaning ref code : 602 - 651 */
+    width: 100% !important;
+}
+
+@media(max-width:868px){
+    .account-entity-modify{
+        padding-top: 0rem;
+    }
+}
+
+.ellipse-image-portfolio-growth-and-annual-returns-account{
+    background-image: url('../images/bottom_home2.png');
+    width: 300px;
+    height: 320px;
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 50px;
+    right: -150px;
+    z-index: -2;
+}
+
+.ellipse-image-portfolio-growth-and-annual-returns-bottom-account{
+    background-image: url('../images/portfolio_account_bottom.png');
+    width: 300px;
+    height: 320px;
+    position: absolute;
+    background-repeat: no-repeat;
+    bottom: 100px;
+    left: -100px;
+    z-index: -2;
+}
+
+
+.variations-bar-account-entity-account{
+    font-size: 3rem;
+    background-color: var(--color-secondary);
+    padding: 3rem 2rem;
+    border-radius: 2rem;
+}
+.variations-bar-account-entity-account .variations-bar-account-entity-runing{
+    padding: 0rem 5rem;
+    color: var(--color-light);
+    font-size: 3rem;
+    font-weight: normal !important;
+}
+.account-date span{
+    color: var(--color-light);
+    width: 200px;
+    display: block;
+}
+
+@media(max-width:868px){
+    .variations-bar-account-entity .variations-bar-account-entity-runing{
+        font-size: 2rem;
+    }
+}
+
+@media(max-width:668px){
+    .variations-bar-account-entity{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .variations-bar-account-entity-details{
+        width: 220px;
+        margin-top: 1rem;
+        text-align: center;
+    }
+}
+@media(max-width:550px){
+    .variations-bar-account-entity .variations-bar-account-entity-runing{
+        font-size: 2rem;
+        padding: 0rem;
+    }
+    .variations-bar-account-entity .variations-bar-account-entity-runing span{
+        display: block;
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+
+
+/* ---------------------------------------------
+Variations bar2 account Ref: 718 - 787
+--------------------------------------------- */
+
+.account-variants{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0rem;
+}
+
+@media(max-width: 660px){
+    .account-date, .account-next-action-b{
+        font-size: 2.5rem !important;
+        padding: 0px !important;
+    }
+}
+
+@media(max-width: 500px){
+    .variations-bar-account-entity-account{
+        padding: 1rem 2rem;
+    }
+}
+
+@media(max-width: 600px){
+    .account-date, .account-next-action-b{
+        font-size: 2.5rem !important;
+    }
+}
+@media(max-width: 410px){
+    .account-date, .account-next-action-b{
+        font-size: 1.6rem !important;
+    }
+}
+@media(max-width: 350px){
+    .account-date, .account-next-action-b{
+        font-size: 1.5rem !important;
+    }
+}
+
+
+
+
+/* ---------------------------------------------
+Key Metrics account
+--------------------------------------------- */
+.key-metrics-entity{
+    margin: auto;
+    padding: 3rem 2rem;
+    box-shadow: var(--shadow);
+    width: 100%;
+    border-radius: 2rem;
+    margin-top: 7.5rem;
+    margin-bottom: 7.5rem;
+    background-color: var(--color-light);
+}
+.key-metrics-account{
+    position: relative;
+}
+.ellipse-image-key-metrics-account::before{
+    content: '';
+    background-image: url('../images/key_metcies_circle.png');
+    width: 300px;
+    height: 320px;
+    position: absolute;
+    background-repeat: no-repeat;
+    bottom: 50px;
+    right: -150px;
+    transform: rotate(360deg);
+    z-index: -2;
+}
+
+
+.key-metrics-entity div{
+    padding: 1rem 5rem;
+    font-size: 3rem;
+}
+.key-metrics-entity div.key-metrics-entity-title{
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+.key-metrics-entity div.key-metrics-entity-detail{
+    color: var(--color-secondary);
+}
+.key-metrics-entity div.key-m-uppercase{
+    text-transform: uppercase;
+}
+
+@media(max-width: 500px){
+    .key-metrics-entity{
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+}   
+
+@media(max-width: 460px){
+    .key-metrics-entity div{
+        font-size: 2.5rem;
+    }
+}   
+
+
+@media(max-width: 660px){
+    .key-metrics-entity div{
+        padding-left: 0px !important;
+    }
+}
+
+/* ---------------------------------------------
+Actuall Allocation Account
+--------------------------------------------- */
+
+.actuall-allocation-account-entity{
+    margin: auto;
+    padding: 3rem 2rem;
+    box-shadow: var(--shadow);
+    width: 100%;
+    border-radius: 2rem;
+    margin-bottom: 7.5rem;
+    background-color: var(--color-light);
+}   
+
+.actuall-allocation-account{
+    position: relative;
+}
+
+.ellipse-image-actuall-allocation-account::before{
+    content: '';
+    background-image: url('../images/ellipse_image_actuall_allocation_account.png');
+    width: 300px;
+    height: 320px;
+    position: absolute;
+    background-repeat: no-repeat;
+    bottom: 290px;
+    left: -100px;
+    transform: rotate(360deg);
+    z-index: -1;
+}
+
+.group-image-actuall-allocation-account::before{
+    content: '';
+    background-image: url('../images/group_actuall_allocation_account.png');
+    width: 600px;
+    height: 250px;
+    position: absolute;
+    background-repeat: no-repeat;
+    bottom: 0px;
+    right: -20px;
+    transform: rotate(360deg);
+    z-index: -1;
+}
+
+
+.actuall-allocation-account-entity div{
+    padding: 1rem 5rem;
+    font-size: 3rem;
+}
+.actuall-allocation-account-entity-title{
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+.actuall-allocation-account-entity div.circle-chart{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+@media(max-width:660px){
+    .actuall-allocation-account-entity div{
+        padding: 1rem 0rem;
+        font-size: 3rem;
+    }
+}
+@media(max-width:350px){
+    .actuall-allocation-account-entity div{
+        font-size: 2.5rem;
+    }
+}
+
+
+
+
